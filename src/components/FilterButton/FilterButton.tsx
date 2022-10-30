@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Button from "antd/lib/button";
 import {FilterValuesType} from "../../app/App";
 import s from './FilterButton.module.css'
@@ -6,8 +6,10 @@ import s from './FilterButton.module.css'
 export type FilterButtonType = {
   changeFilter: (filter: FilterValuesType) => void
 }
+
+const filterButtonValues:FilterValuesType[]  = ['all', 'active', 'completed', 'clear completed']
+
 export const FilterButton: React.FC<FilterButtonType> = ({changeFilter}) => {
-  const [filterButtonValues, setFilterButtonValues] = useState<FilterValuesType[]>(['all', 'active', 'completed', 'clear completed'])
   const onFilterButtonClickHandler: (filter: FilterValuesType) => void = (filter) => {
     changeFilter(filter)
   }
