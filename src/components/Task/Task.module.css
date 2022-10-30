@@ -1,0 +1,36 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: 15px;
+
+    border: 1px solid #808080;
+}
+
+.checkbox span:hover {
+    border-radius: 50%;
+}
+
+.checkbox span:checked:after:hover {
+    border-radius: 50%;
+}
+
+.ant-checkbox-checked::after {
+    border: none
+}
+
+.checkbox span {
+    border-radius: 50%;
+}
+
+.title, .isDone {
+    display: block;
+    margin: 0 0 0 10px;
+    font-size: 24px;
+    color: #808080
+}
+
+.isDone {
+    text-decoration: line-through;
+}

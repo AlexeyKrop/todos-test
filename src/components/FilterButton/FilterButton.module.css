@@ -1,0 +1,14 @@
+.wrapper{
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn span{
+    font-size: 18px;
+    line-height: 120%;
+    color: #808080
+}

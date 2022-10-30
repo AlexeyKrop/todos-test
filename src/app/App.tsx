@@ -4,6 +4,8 @@ import s from './App.module.css'
 import {getNewTask} from "../utils/getNewTask";
 import {getFilteredTasks} from "../utils/getFilteredTasks";
 import {Task} from "../components/Task/Task";
+import {AddItemForm} from "../components/AddItemForm/AddItemForm";
+import {FilterButton} from "../components/FilterButton/FilterButton";
 
 export type FilterValuesType = 'all' | 'active' | 'completed' | 'clear completed'
 export type TasksType = {
@@ -41,7 +43,7 @@ export const App = () => {
     <div className={s.wrapper}>
       <h1 className={s.title}>todos</h1>
       <div className={s.tasks}>
-        {/*<AddItemForm addItem={addTask}/>*/}
+        <AddItemForm addItem={addTask}/>
         {filteredTasks.map(({id, title, isDone}) => <div key={id}><Task taskId={id}
                                                                         title={title}
                                                                         changeTaskStatus={changeTaskStatus}
@@ -49,7 +51,7 @@ export const App = () => {
         </div>)}
         <div className={s.bottomGroup}>
           <span className={s.item}>{itemsLength} items left</span>
-          {/*<FilterButton changeFilter={changeFilter}/>*/}
+          <FilterButton changeFilter={changeFilter}/>
         </div>
       </div>
     </div>
