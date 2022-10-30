@@ -37,7 +37,13 @@ export const App = () => {
     setTask(tasks.map((task) => task.id === taskId ? {...task, isDone} : task))
   }
 
+  const removeIsDoneTask: () => void = () => {
+    setTask(tasks.filter(t => !t.isDone))
+  }
+
   const filteredTasks = getFilteredTasks(tasks, filter)
+
+
 
   return (
     <div className={s.wrapper}>
@@ -51,7 +57,7 @@ export const App = () => {
         </div>)}
         <div className={s.bottomGroup}>
           <span className={s.item}>{itemsLength} items left</span>
-          <FilterButton changeFilter={changeFilter}/>
+          <FilterButton changeFilter={changeFilter} removeIsDoneTask={removeIsDoneTask}/>
         </div>
       </div>
     </div>

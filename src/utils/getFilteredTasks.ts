@@ -7,8 +7,5 @@ export const getFilteredTasks = (tasks: TasksType[], filter: FilterValuesType): 
   if (filter === "completed") {
     return tasks.filter(t => t.isDone);
   }
-  if (filter === "clear completed") {
-    return tasks.filter(t => !t.isDone);
-  }
   return tasks
 }
